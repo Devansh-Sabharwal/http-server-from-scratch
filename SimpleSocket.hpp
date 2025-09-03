@@ -19,7 +19,7 @@ namespace HDE
     class SimpleSocket
     {
     private:
-        int sock;
+        int sock; // Q why its of type int ? A- When you say sock = socket(...), you’re not holding the socket itself — you’re holding an ID number that the kernel uses to find the socket object inside its own internal tables.
         struct sockaddr_in address;
         int connection;
 
@@ -41,10 +41,11 @@ namespace HDE
         the port on which we are listening
         */
         // virtual function to connect to a network
+        // A virtual function lets you call the correct version of a function based on the actual object type at runtime
         virtual int connect_to_network(int sock, struct sockaddr_in address) = 0;
 
         // function to test sockets and connection
-        void test_connection(int);
+        void test_connection(int item_to_test);
 
         // getter function
         struct sockaddr_in get_address();
