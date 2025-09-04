@@ -10,6 +10,7 @@ HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port,
     // establish socket
     sock = socket(domain, service, protocol);
     test_connection(sock);
+
     // establish network connection
     connection = connect_to_network(sock, address);
     test_connection(connection);
