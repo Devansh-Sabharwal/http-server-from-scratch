@@ -1,5 +1,6 @@
 #include "SimpleSocket.hpp"
 
+// Constructor
 HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, u_long intrface)
 {
     // define address structure
@@ -10,11 +11,8 @@ HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port,
     // establish socket
     sock = socket(domain, service, protocol);
     test_connection(sock);
-
-    // establish network connection
-    connection = connect_to_network(sock, address);
-    test_connection(connection);
 }
+// Implementation to test_connection function
 void HDE::SimpleSocket::test_connection(int item_to_test)
 { // confirm that the socket ot connection has been properly established
     if (item_to_test < 0)
@@ -23,15 +21,26 @@ void HDE::SimpleSocket::test_connection(int item_to_test)
         exit(EXIT_FAILURE);
     }
 }
+// getter for address
 struct sockaddr_in HDE::SimpleSocket::get_address()
 {
     return address;
 }
+
+// getter for socket
 int HDE::SimpleSocket::get_sock()
 {
     return sock;
 }
+
+// getter for connection
 int HDE::SimpleSocket::get_connection()
 {
     return connection;
+}
+
+// setter for connection
+void HDE::SimpleSocket::set_connection(int connection)
+{
+    this->connection = connection;
 }

@@ -27,9 +27,7 @@ namespace HDE
     class BindingSocket : public SimpleSocket
     {
     public:
-        BindingSocket(int domain, int service, int protocol, int port, u_long intrface)
-            : SimpleSocket(domain, service, protocol, port, intrface) {} // Constructor forwarding: So when you create a BindingSocket, it first runs the SimpleSocket constructor with the given arguments.
-
+        BindingSocket(int domain, int service, int protocol, int port, u_long intrface);
         int connect_to_network(int sock, struct sockaddr_in address);
     };
 }
