@@ -1,3 +1,17 @@
+/*
+In this file we are using Sockets from C++ that lets us to create connection between client and server
+
+This header defines the base class `SimpleSocket` which acts as an abstraction layer over the low-level C socket API. It provides the common functionality
+required to set up and manage sockets in both client and server applications.
+
+Key responsibilities of this class:
+  - manage socket file descriptor, connection status, and address info.
+  - Encapsulate the setup of IPv4 socket addresses (using `sockaddr_in`).
+  - Provide a test_connection function to check connection
+  - Expose getters for socket, connection, and address.
+  - Declare a pure virtual function `connect_to_network`, making this class an
+    abstract base class. It will be derived later
+*/
 #ifndef SimpleSocket_hpp
 #define SimpleSocket_hpp
 
@@ -19,8 +33,8 @@ namespace HDE
     class SimpleSocket
     {
     private:
-        int sock; // Q why its of type int ? A- When you say sock = socket(...), you’re not holding the socket itself — you’re holding an ID number that the kernel uses to find the socket object inside its own internal tables.
-        struct sockaddr_in address;
+        int sock;                   // Q why its of type int ? A- When you say sock = socket(...), you’re not holding the socket itself — you’re holding an ID number that the kernel uses to find the socket object inside its own internal tables.
+        struct sockaddr_in address; // more info about sockaddr_in on line 74
         int connection;
 
     public:
