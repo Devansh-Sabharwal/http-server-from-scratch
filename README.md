@@ -2,7 +2,23 @@
 
 A simple HTTP server built in C using sockets. This project demonstrates basic networking concepts like socket creation, binding, listening, accepting client connections, and sending responses. It works on Windows (with Winsock2) and Linux.
 
-This server is built incrementally—starting from a simple socket, then adding binding, listening, and connecting capabilities—demonstrating step-by-step abstraction of network programming concepts
+## Note
+
+Comprehensive comments are included throughout the code — if you want to learn, you can follow how the project flows step-by-step from
+
+```
+Networking/Sockets/SimpleSocket.cpp/hpp
+          ↓
+Networking/Sockets/BindingSocket.cpp/hpp
+          ↓
+Networking/Sockets/ListeningSocket.cpp/hpp
+          ↓
+Networking/Server/SimpleServer.cpp/hpp
+          ↓
+Networking/Server/TestServer.cpp/hpp
+```
+
+This server is built incrementally—starting from a simple socket, then adding binding, listening, and connecting capabilities—demonstrating step-by-step abstraction of network programming concepts.
 
 ## Project Structure
 
