@@ -19,7 +19,7 @@ Without binding, the OS doesn’t know which port your socket should listen on.
 The base class SimpleSocket is general — it creates a socket and leaves a placeholder function (connect_to_network) for “how to attach this socket to the network”.
 */
 #ifndef BindingSocket_hpp
-#define BinfingSocket_hpp
+#define BindingSocket_hpp
 #include <stdio.h>
 #include "SimpleSocket.hpp"
 namespace HDE

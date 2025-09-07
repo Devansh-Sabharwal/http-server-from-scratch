@@ -53,6 +53,10 @@ namespace HDE
 
         Port
         the port on which we are listening
+
+        u_long intrface is supposed to represent the network interface the socket should bind to.
+        This socket should only accept connections that arrive on this particular IP address (which belongs to one network interface)
+        ex: INADDR_ANY : Socket will accept connections to any of the machine’s IPs:
         */
         // virtual function to connect to a network
         // A virtual function lets you call the correct version of a function based on the actual object type at runtime

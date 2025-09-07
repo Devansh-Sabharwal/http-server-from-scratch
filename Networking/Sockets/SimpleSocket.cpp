@@ -4,9 +4,10 @@
 HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, u_long intrface)
 {
     // define address structure
+
     address.sin_family = domain;
     address.sin_port = htons(port);
-    address.sin_addr.s_addr = htonl(intrface);
+    address.sin_addr.s_addr = intrface;
 
     // establish socket
     sock = socket(domain, service, protocol);
