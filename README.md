@@ -1,4 +1,4 @@
-# HTTP Server in C
+# HTTP Server in C++
 
 A simple HTTP server built in C using sockets. This project demonstrates basic networking concepts like socket creation, binding, listening, accepting client connections, and sending responses. It works on Windows (with Winsock2) and Linux.
 
